@@ -1,14 +1,15 @@
 
  const formEl = document.querySelector(".form")
 
-function createPromise(amount, delay) {
+const createPromise = new Promise((resolve, reject) =>{
   const shouldResolve = Math.random() > 0.3;
   if (shouldResolve) {
-   resolve
+    resolve()
   } else {
-    
+    reject()
   }
 }
+ )
 
 
 
@@ -19,13 +20,13 @@ function onformSubmit(evt) {
   evt.preventDefault()
   const formdata = new FormData(evt.currentTarget)
 
-  let delay = 0
+  letdelay = 0
   let step = 0
   let amount = 0
   
        formdata.forEach((value, name) => {
         if (name === "delay") {
-          Amount = value
+          delay = value
          }   
          if (name === "step") {
           step = value
@@ -36,7 +37,8 @@ function onformSubmit(evt) {
   }) 
  
  
-createPromise(amount, delay)
+
+createPromise
   .then(({ position, delay }) => {
     console.log(`✅ Fulfilled promise ${position} in ${delay}ms`);
   })
@@ -46,4 +48,7 @@ createPromise(amount, delay)
 
 
 
-  }
+
+
+}
+  
