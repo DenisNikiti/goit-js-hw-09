@@ -65,7 +65,8 @@ function onButtonclick(evt) {
     function Intervl() {
 
           if (timer[0].textContent === "00" && timer[1].textContent === "00" && timer[2].textContent === "00" && timer[3].textContent === "00") {
-            clearInterval(time)
+              clearInterval(time)
+              return
           }
         timer[3].textContent = addLeadingZero(timer[3].textContent - 1)
 
