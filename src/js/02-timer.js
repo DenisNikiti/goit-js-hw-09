@@ -54,11 +54,11 @@ buttonEl.addEventListener("click",onButtonclick)
 
 
 function onButtonclick(evt) {
-      timer[0].textContent = deltatime.days
-      timer[1].textContent = deltatime.hours
-      timer[2].textContent = deltatime.minutes
-      timer[3].textContent = deltatime.seconds
-    
+      timer[0].textContent =  addLeadingZero(deltatime.days)   
+      timer[1].textContent =  addLeadingZero(deltatime.hours)    
+      timer[2].textContent =  addLeadingZero(deltatime.minutes)    
+      timer[3].textContent =  addLeadingZero(deltatime.seconds)    
+      buttonEl.disabled = true
     
     const time = setInterval(Intervl, 1000);
     
@@ -68,27 +68,35 @@ function onButtonclick(evt) {
               clearInterval(time)
               return
           }
+        
         timer[3].textContent = addLeadingZero(timer[3].textContent - 1)
-
-    }
-       if (timer[3].textContent === "00") {
-        timer[3].textContent = 60
+         if (timer[3].textContent === "00") {
+        timer[3].textContent = "60"
     }
     
-    if (timer[3].textContent === "00" && timer[2].textContent != "00") {
-        timer[2].textContent = addLeadingZero(timer[2].textContent - 1)
-    }
-
-    if (timer[2].textContent === "00" && timer[1].textContent != "00") {
-        timer[1].textContent = addLeadingZero(timer[1].textContent - 1)
-        timer[2].textContent = "60"
-    }
+    
 
    if (timer[1].textContent === "00" && timer[0].textContent != "00") {
        timer[0].textContent = addLeadingZero(timer[0].textContent - 1)
        timer[1].textContent = "60"
-   }
-      
+    }
+    if (timer[2].textContent === "00" && timer[1].textContent != "00") {
+        timer[1].textContent = addLeadingZero(timer[1].textContent - 1)
+        timer[2].textContent = "60"
+    }
+    if (timer[3].textContent === "00" && timer[2].textContent != "00") {
+        timer[2].textContent = addLeadingZero(timer[2].textContent - 1)
+        
+    }
+
+
+
+    }
+          
+     
+
+     
+   
 }
 
 
