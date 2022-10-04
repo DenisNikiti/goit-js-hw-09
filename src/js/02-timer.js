@@ -3,6 +3,7 @@ import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
 
 const buttonEl = document.querySelector("[ data-start]")
+const timer = document.querySelectorAll(".value")
 let  deltatime = {}
 
 function convertMs(ms) {
@@ -24,9 +25,7 @@ function convertMs(ms) {
   return { days, hours, minutes, seconds };
 }
 
-console.log(convertMs(2000)); // {days: 0, hours: 0, minutes: 0, seconds: 2}
-console.log(convertMs(140000)); // {days: 0, hours: 0, minutes: 2, seconds: 20}
-console.log(convertMs(24140000)); // {days: 0, hours: 6 minutes: 42, seconds: 20}
+
 
 
 const options = {
@@ -37,13 +36,43 @@ const options = {
   onClose(selectedDates) {
       console.log(selectedDates[0]);
       
-      console.log(selectedDates[0].valueOf())
+      buttonEl.disabled = true
    
        deltatime = convertMs(selectedDates[0].valueOf() - Date.now())
-      
-
+      if (selectedDates[0].valueOf() - Date.now() < 0) {
+        return window.alert("Please choose a date in the future") 
+      }
+              buttonEl.disabled = false
   },
 };
 
 flatpickr("#datetime-picker", options)
 
+
+buttonEl.addEventListener("click",onButtonclick)
+
+
+
+function onButtonclick(evt) {
+      timer[0].textContent = deltatime.days
+      timer[1].textContent = deltatime.hours
+      timer[2].textContent = deltatime.minutes,
+      timer[3].textContent = deltatime.seconds
+    
+    
+    const time = setInterval(Intervl, 1000);
+    
+    function Intervl() {
+        timer[3].textContent = addLeadingZero(timer[3].textContent - 1)
+
+    }
+       
+}
+
+
+
+
+
+function addLeadingZero(value) {
+  return value.padStart()
+}
