@@ -70,9 +70,7 @@ function onButtonclick(evt) {
           }
         
         timer[3].textContent = addLeadingZero(timer[3].textContent - 1)
-         if (timer[3].textContent === "00") {
-        timer[3].textContent = "60"
-    }
+      
     
     
 
@@ -89,7 +87,9 @@ function onButtonclick(evt) {
         
     }
 
-
+   if (timer[3].textContent === "00") {
+        timer[3].textContent = "60"
+    }
 
     }
           
