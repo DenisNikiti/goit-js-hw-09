@@ -1,0 +1,2 @@
+document.querySelector(".form").addEventListener("submit",(function(n){n.preventDefault();var e=new FormData(n.currentTarget);e.forEach((function(n,e){})),new Promise((function(n,e){Math.random()>.3?n():e()})).then((function(n){var e=n.amount,o=n.delay;console.log("✅ Fulfilled promise ".concat(e," in ").concat(o,"ms"))})).catch((function(n){var e=n.amount,o=n.delay;console.log("❌ Rejected promise ".concat(e," in ").concat(o,"ms"))}))}));
+//# sourceMappingURL=03-promises.b6d05927.js.map
