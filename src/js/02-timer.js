@@ -66,7 +66,17 @@ function onButtonclick(evt) {
         timer[3].textContent = addLeadingZero(timer[3].textContent - 1)
 
     }
-       
+       if (timer[3].textContent === "00") {
+        timer[3].textContent = 60
+    }
+    
+    if (timer[3].textContent === "00" && timer[2].textContent != "00") {
+        timer[2].textContent = addLeadingZero(timer[2].textContent - 1)
+    }
+
+    if (condition) {
+        
+    }
 }
 
 
@@ -74,5 +84,5 @@ function onButtonclick(evt) {
 
 
 function addLeadingZero(value) {
-  return value.padStart()
+  return String(value).padStart(2,0)
 }
