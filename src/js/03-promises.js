@@ -13,6 +13,7 @@ function createPromise(position, delay) {
 
 formEl.addEventListener("submit",onformSubmit)
 
-function onformSubmit() {
-    
+function onformSubmit(evt) {
+  evt.preventDefault()
+  const formdata = new FormData(evt.currentTarget)
   }
