@@ -7,11 +7,21 @@
 function createPromise(amount, delay) {
   return new Promise((resolve, reject) => {
     const shouldResolve = Math.random() > 0.3;
-    if (shouldResolve) {
+   
+     setInterval(() => {
+      
+       
+        if (shouldResolve) {
       resolve()
     } else {
       reject()
     }
+       
+       
+       
+     }, 500);
+   
+   
   }
     )
     
