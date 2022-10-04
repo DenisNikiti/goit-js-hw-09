@@ -1,2 +1,0 @@
-document.querySelector(".form").addEventListener("submit",(function(e){e.preventDefault();const o=new FormData(e.currentTarget);let t=0,n=0;o.forEach(((e,o)=>{"delay"===o&&(Amount=e),"step"===o&&(t=e),"amount"===o&&(n=e)})),(void(Math.random()>.3&&resolve)).then((({position:e,delay:o})=>{console.log(`✅ Fulfilled promise ${e} in ${o}ms`)})).catch((({position:e,delay:o})=>{console.log(`❌ Rejected promise ${e} in ${o}ms`)}))}));
-//# sourceMappingURL=03-promises.9dfa455e.js.map
