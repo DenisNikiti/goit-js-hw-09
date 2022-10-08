@@ -40,9 +40,9 @@ function onformSubmit(evt) {
   const formdata = new FormData(evt.currentTarget)
 
   
-    let delay = 0;
-  let step = 0;
-  let amount =0;
+  let delay = 0;
+  let step =  0;
+  let amount = 0;
 
 
   formdata.forEach((value, name) => {
@@ -59,7 +59,7 @@ function onformSubmit(evt) {
 
   })
 
-
+      console.log(delay,step,amount)
   
 
     for (let index = 1; index <= amount; index += 1) {
