@@ -5,7 +5,7 @@
   let step =  0;
   let amount = 0;
   
-   
+     
   
 function createPromise(time) {
   
@@ -68,12 +68,13 @@ createPromise(delay)
     .then((time ) => {
       console.log(`✅ Fulfilled promise ${index} in ${time}ms`);
       delay = delay + step
-      
+      console.log(delay)
     })
     .catch((time ) => {
       console.log(`❌ Rejected promise ${index} in ${time}ms`);
+
       delay = delay + step
-        
+        console.log(delay)
     });
 
       
