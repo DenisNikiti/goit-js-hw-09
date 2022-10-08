@@ -14,9 +14,9 @@ function createPromise(time) {
     
             setTimeout(() => {
                   if (shouldResolve) {
-                resovle(delay)
+                resovle(time)
              }
-               reject(delay)
+               reject(time)
             }, time);
     
   })
@@ -65,13 +65,15 @@ function onformSubmit(evt) {
     for (let index = 1; index <= amount; index += 1) {
       
 createPromise(delay)
-    .then((delay ) => {
-      console.log(`✅ Fulfilled promise ${index} in ${delay}ms`);
-        delay += step
+    .then((time ) => {
+      console.log(`✅ Fulfilled promise ${index} in ${time}ms`);
+      delay = delay + step
+      
     })
-    .catch((delay ) => {
-      console.log(`❌ Rejected promise ${index} in ${delay}ms`);
-      delay += step
+    .catch((time ) => {
+      console.log(`❌ Rejected promise ${index} in ${time}ms`);
+      delay = delay + step
+        
     });
 
       
