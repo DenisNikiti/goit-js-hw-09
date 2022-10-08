@@ -62,7 +62,7 @@ function onformSubmit(evt) {
 
   
 
-    for (let index = 1; index <= 5; index += 1) {
+    for (let index = 1; index <= amount; index += 1) {
       
 createPromise(delay)
     .then((delay ) => {
