@@ -1,21 +1,23 @@
 
  const formEl = document.querySelector(".form")
 
-
+ let delay = 0;
+  let step =  0;
+  let amount = 0;
   
-
+   
   
-function createPromise(delay) {
+function createPromise(time) {
   
   return new Promise((resovle, reject) => {
-      const shouldResolve = Math.random() > 0.3;         
+    const shouldResolve = Math.random() > 0.3; 
+    
             setTimeout(() => {
                   if (shouldResolve) {
-                        
                 resovle(delay)
              }
                reject(delay)
-            }, delay);
+            }, time);
     
   })
 
@@ -40,9 +42,7 @@ function onformSubmit(evt) {
   const formdata = new FormData(evt.currentTarget)
 
   
-  let delay = 0;
-  let step =  0;
-  let amount = 0;
+ 
 
 
   formdata.forEach((value, name) => {
@@ -59,7 +59,7 @@ function onformSubmit(evt) {
 
   })
 
-      console.log(delay,step,amount)
+      
   
 
     for (let index = 1; index <= amount; index += 1) {
@@ -67,14 +67,15 @@ function onformSubmit(evt) {
 createPromise(delay)
     .then((delay ) => {
       console.log(`✅ Fulfilled promise ${index} in ${delay}ms`);
-        
+        delay += step
     })
     .catch((delay ) => {
       console.log(`❌ Rejected promise ${index} in ${delay}ms`);
-      
+      delay += step
     });
 
-      delay += step
+      
+      
     }
 
 
