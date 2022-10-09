@@ -5,7 +5,7 @@
   let step =  0;
   let amount = 0;
   
-     
+     console.log(formEl)
   
 function createPromise(time) {
   
