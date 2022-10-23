@@ -1,7 +1,7 @@
 
 const startEl = document.querySelector("[data-start]")
 const stopEl = document.querySelector("[data-stop]")
- let x 
+ let intervalId 
 
 
 function getRandomHexColor() {
@@ -10,7 +10,7 @@ function getRandomHexColor() {
 
 
 startEl.addEventListener("click", () => {
-   x = setInterval(() => {
+   intervalId = setInterval(() => {
     document.body.style.backgroundColor = getRandomHexColor()
    }, 1000);
     
@@ -22,6 +22,6 @@ startEl.addEventListener("click", () => {
 stopEl.addEventListener("click", () => { 
     stopEl.disabled = true
     startEl.disabled = false
-    clearInterval(x)
+    clearInterval(intervalId)
 
 })
