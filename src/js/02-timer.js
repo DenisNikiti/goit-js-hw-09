@@ -70,7 +70,6 @@ function onButtonclick(evt) {
       
      if (timer[0].textContent === "00" && timer[1].textContent === "00" && timer[2].textContent === "00" && timer[3].textContent === "00") {
             clearInterval(time)
-            
               return
           }
     
